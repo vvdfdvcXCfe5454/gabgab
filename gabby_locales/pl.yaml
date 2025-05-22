@@ -1,0 +1,237 @@
+---
+language_name: '🇵🇱 Polskie'
+description:
+  short: |
+    Zamień dowolną wiadomość w piękną naklejkę z cytatem! ✨
+    Odpowiedz za pomocą /q lub przekaż wiadomość do mnie
+  long: |
+    Twórz oszałamiające naklejki z cytatami i zachowuj ulubione chwile z czatu! ✨
+
+    Po prostu odpowiedz /q na dowolną wiadomość lub przekaż ją do mnie. Idealne do zapisywania:
+    🌟 Najlepsze momenty i wspomnienia z czatu
+    💭 Inspirujące myśli i rozmowy
+    🎨 Kreatywne wiadomości z niestandardowymi stylami
+    ✍️ Ważne notatki w pięknym formacie
+
+    Zacznij teraz - wystarczy przesłać wiadomość lub użyć /q!
+start: |
+  <b>Cześć! 👋 Jestem QuotLyBot</b>
+
+  Przekształcam zwykłe wiadomości czatu w oszałamiające naklejki z cytatami. Prosty, kreatywny i fajny w użyciu!
+
+  ✨ <b>Gotowy na stworzenie pierwszego cytatu?</b>
+  <b>W prywatnych czatach:</b> Przekaż mi dowolne wiadomości (możesz nawet wybrać kilka naraz!)
+  <b>W grupach:</b> Dodaj mnie do swojej grupy i odpowiedz z <code>/q</code> na dowolną wiadomość
+
+  Chcesz zmienić kolory, style i inne? Wpisz /help, gdy będziesz gotowy odkryć wszystkie kreatywne możliwości! 🎨
+help: |
+  <b>✨ QuotLyBot: Szybkie i Łatwe Cytaty! ✨</b>
+
+  Zamień wiadomości w stylowe cytaty na Telegramie. Oto jak:
+
+  📱 <b>Podstawowe Cytowanie</b>
+
+  • Odpowiedz & Cytuj: Odpowiedz na wiadomość i wpisz <code>/q</code>, aby ją zacytować.
+  • Cytuj Wiele: Odpowiedz na pierwszą z kilku wiadomości, wpisz <code>/q [number]</code> (np. <code>/q 3</code>), aby zacytować wiele.
+  • Przekaż & Cytuj: Przekaż wiadomość do bota, aby ją bezpośrednio zacytować.
+
+  🎨 <b>Dostosuj Swoje Cytaty</b>
+
+  • Kolory:
+      • Podstawowe: <code>/q red</code> (lub blue, green, itp.)
+      • Niestandardowe: <code>/q #[hex color code]</code> (np. <code>/q #cbafff</code>)
+      • Losowe: <code>/q random</code>
+  • Multimedia: Dołącz obrazy/wideo z cytowanej wiadomości za pomocą <code>/q m</code> lub <code>/q media</code>
+      • Przytnij Multimedia: Użyj <code>/q c</code> lub <code>/q crop</code> do przycinania multimediów.
+  • Zachowaj Odpowiedzi: Pokaż wiadomość, na którą odpowiadasz, za pomocą <code>/q r</code> lub <code>/q reply</code>
+  • Format Obrazu: Użyj <code>/q i</code> lub <code>/q img</code> lub <code>/q p</code> lub <code>/q png</code> dla cytatów obrazowych (zamiast naklejek).
+
+  💡 <b>Fajne Kombinacje</b>
+
+  • Biały cytat z odpowiedziami: <code>/q 3 white rp</code>
+  • Wysokiej jakości czerwony obraz: <code>/q i red s3.2</code>
+  • Cytat z multimediami i odpowiedziami: <code>/q r 2 #cbafff m</code>
+
+  ⚙️ <b>Więcej Opcji</b>
+
+  • Oceń Cytaty: <code>/q rate</code> (jeśli włączone w grupie)
+  • Losowy Cytat: <code>/qrand</code> (jeśli włączone w grupie)
+  • Najlepsze Cytaty: <code>/qtop</code> (jeśli włączone w grupie)
+  • Zmień Język: <code>/lang</code>
+
+  🎯 <b>Ustawienia Administratora Grupy</b> (tylko dla administratorów grup)
+
+  • Domyślny Kolor: <code>/qcolor [color]</code>
+  • Włącz Oceny: <code>/qrate</code>
+  • Zapisz do Pakietu Naklejek: <code>/qs [emoji]</code>
+  • Usuń Naklejkę: <code>/qd</code> (odpowiedz na naklejkę)
+  • Częstotliwość Losowych Cytatów: <code>/qgab [number]</code>
+  • Zmień Sufiks Emoji: <code>/qemoji</code> (zmień sufiks emoji naklejki)
+  • Styl Emoji:
+      • Klasyczny: <code>/qb apple</code>, <code>/qb google</code>
+      • Alternatywny: <code>/qb twitter</code>, <code>/qb joypixels</code>
+      • Retro: <code>/qb blob</code>
+
+  📱 <b>Potrzebujesz Pomocy?</b>
+
+  • Blog: <a href="https://t.me/LyBlog">@LyBlog</a>
+  • GitHub: <a href="https://github.com/LyoSU/quote-bot">github.com/LyoSU/quote-bot</a>
+  • Wsparcie: <code>/donate</code>
+help_group: |
+  <b>Cześć! 👋</b>
+  Stworzę piękne cytaty w tej grupie - po prostu użyj <code>/q</code> w odpowiedzi na dowolną wiadomość!
+
+  Poznaj wszystkie moje funkcje prywatnie: <a href="t.me/${username}?start=help">Uzyskaj pomoc</a> ✨
+btn:
+  add_group: Dodaj do Grupy
+  help: Pomoc
+quote:
+  unsupported_message: |
+    Przepraszam, jeszcze nie obsługuję tego rodzaju wiadomości 😅
+
+    Spróbuj tekst, zdjęcia, naklejki lub wiadomości głosowe!
+  api_error: |
+    <b>Ups! Coś poszło nie tak 😅</b>
+    <pre>${error}</pre>
+    Spróbuj ponownie za chwilę!
+  empty_forward: |
+    Odpowiedz lub przekaż wiadomość, którą chcesz zacytować ✨
+  set_background_color: |
+    <b>Perfekcyjnie!</b> Tło cytatu zmienione na: <code>${backgroundColor}</code> 🎨
+  set_emoji_brand: |
+    <b>Gotowe!</b> Styl emoji zmieniony na: <code>${emojiBrand}</code> ✨
+  errors:
+    api_down: |
+      😕 Nasza usługa cytatów jest tymczasowo niedostępna. Spróbuj ponownie za kilka minut.
+
+      Jeśli problem się utrzymuje, sprawdź @LyBlog w poszukiwaniu aktualizacji.
+    rate_limit: |
+      ⏳ Zbyt wiele żądań! Proszę czekać ${seconds} sekund przed utworzeniem kolejnego cytatu.
+    file_too_large: |
+      📸 Plik multimedialny jest zbyt duży (mak. 5 MB). Spróbuj użyć mniejszego obrazu lub wideo.
+    invalid_format: |
+      ❌ Nieobsługiwany format pliku. Obsługuję:
+      • Obrazy (JPG, PNG, WEBP)
+      • Wideo (MP4)
+      • Naklejki
+      • Wiadomości tekstowe
+    telegram_error: |
+      ⚠️ Błąd Telegram: ${error}
+
+      Zwykle dzieje się to, gdy:
+      • Plik jest zbyt duży
+      • Pakiet naklejek jest pełny
+      • Bot nie ma uprawnień
+    generic_error: |
+      😅 Ups! Coś poszło nie tak:
+      <code>${error}</code>
+
+      Proszę spróbować ponownie lub zgłosić to do @Ly_oBot, jeśli problem się utrzymuje.
+sticker:
+  save:
+    suc: Pomyślnie dodano do Twojego <a href="${link}">pakietu naklejek grupy</a> ✨
+    error:
+      animated: Przepraszam, nie mogę zapisać animowanych naklejek jeszcze 😅
+      need_creator: <b>Prawie gotowe!</b> ${creator} musi najpierw wysłać mi wiadomość, aby zapisać naklejki
+      telegram: <b>Ups!</b> Coś poszło nie tak:\n<pre>${error}</pre>
+  delete:
+    suc: Usunięto z Twojego <a href="${link}">pakietu naklejek grupy</a> 🗑
+    error:
+      telegram: |
+        <b>Nie udało się usunąć naklejki 😕</b>
+        ${reason}
+      not_found: Naklejka nie znajduje się już w pakiecie 🤔
+      rights: Nie mam uprawnień do usunięcia tej naklejki 🔒
+      generic: |
+        Coś poszło nie tak. Proszę spróbować ponownie później ⚠️
+
+        <code>${error}</code>
+  delete_random:
+    suc: Usunięto z losowej kolekcji 🗑
+    error: |
+      <b>Nie udało się usunąć cytatu 😕</b>
+      ${error}
+    not_found: Tego cytatu nie ma w bazie danych 🤔
+  empty_forward: |
+    Odpowiedz na naklejkę, zdjęcie lub obraz, który chcesz zapisać ✨
+  fstik: |
+    Aby zapisać to do swojego osobistego pakietu naklejek, przekaż do @fStikBot 🎨
+rate:
+  vote:
+    rated: |
+      Oceniłeś ${rateName} ten cytat! Dzięki za ocenę ⭐
+    back: |
+      Twoja ocena została usunięta 🔄
+  settings:
+    enable: |
+      Ocena cytatu została włączona! Oceniaj za pomocą ⭐
+    disable: |
+      Ocena cytatu została wyłączona 🔄
+random:
+  empty: |
+    Jeszcze nie ma cytatów o wysokiej ocenie w tej grupie! Zacznij oceniać wiadomości ⭐
+  gab: |
+    Częstotliwość losowych cytatów ustawiona na ${gab} ✨
+hidden:
+  settings:
+    enable: |
+      Wyszukiwanie nadawcy włączone 🔍
+    disable: |
+      Wyszukiwanie nadawcy wyłączone 🔄
+privacy:
+  settings:
+    enable: |
+      Tryb prywatności aktywowany 🔒 Twoje informacje będą ukryte w cytatach
+    disable: |
+      Tryb prywatności dezaktywowany 🔓
+top:
+  info: |
+    <b>✨ Najczęściej cytowane wiadomości</b>
+  open: Zobacz najlepsze cytaty
+donate:
+  info: |
+    <b>Wspieraj rozwój QuotLyBot! ☕</b>
+
+    Twoje wsparcie pomaga nam:
+    • Utrzymać działanie serwerów 24/7
+    • Dodawać nowe funkcje i style
+    • Poprawiać jakość cytatów
+    • Przyspieszać działanie bota
+
+    <b>💳 Łatwe opcje płatności</b>
+    • <a href="https://send.monobank.ua/jar/2fpLioJzU8">Płatność kartą</a> (Visa/Mastercard)
+    • Apple Pay / Google Pay
+
+    <b>🔒 Kryptowaluty (dla zaawansowanych użytkowników)</b>
+    • BTC: <code>17QaN4wPZFaH4qtsgDdTaYwiW9s9PUcHj7</code>
+    • ETH/BUSD: <code>0x34007b75775F8DAe005A407141617aA2fBa2740c</code>
+
+    Każdy wkład pomaga sprawić, że QuotLyBot będzie lepszy dla wszystkich! 💜
+  title: Wspieraj ${botUsername}
+  description: Pomóż utrzymać magię ✨
+  successful: |
+    <b>Dziękujemy za wsparcie! 💜</b>
+    Pomagasz uczynić QuotLyBot jeszcze lepszym!
+  pay: '💜 Zapłać przez Telegram'
+  liqpay: 'Zapłać kartą 💳'
+  other: 'Inne opcje'
+emoji:
+  info: |
+    <b>Wybierz swoje emoji dla cytatów!</b>
+
+    • Ustaw niestandardowe emoji: <code>/qemoji</code>💜
+    • Użyj losowego emoji: <code>/qemoji random</code>
+    • Wyczyść emoji: <code>/qemoji clear</code>
+
+    Twoje emoji zostanie dodane do wszystkich nowych cytatów ✨
+  done: Styl emoji zaktualizowany! ✨
+only_admin: |
+  <b>⚠️ Wymagana dostępność administratora</b>
+  Ta komenda może być użyta tylko przez administratorów grupy.
+only_group: |
+  <b>⚠️ Komenda grupowa</b>
+  Ta funkcja działa tylko w czatach grupowych.
+rate_limit: |
+  <i>Krótkie przerwa...</i> Możesz ponownie użyć tej komendy za ${seconds} sekund ⏳
+
+  <i>Porada eksperta: Czekając, spróbuj dostosować swój ostatni cytat za pomocą </i><code>/q color</code> <i>lub</i> <code>/q media</code>

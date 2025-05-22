@@ -1,0 +1,241 @@
+---
+language_name: '🇧🇷'
+description:
+  short: |
+    Transforme qualquer mensagem em um lindo adesivo de citação! ✨
+    Responda com /q ou encaminhe a mensagem para mim
+  long: |
+    Crie adesivos de citação incríveis e preserve seus momentos favoritos do chat! ✨
+
+    Basta responder /q a qualquer mensagem ou encaminhá-la para mim. Perfeito para salvar:
+    🌟 Melhores destaques e memórias do chat
+    💭 Pensamentos e conversas inspiradoras
+    🎨 Mensagens criativas com estilos personalizados
+    ✍️ Notas importantes em formato bonito
+
+    Comece agora - basta encaminhar uma mensagem ou usar /q!
+start: |
+  <b>Olá! 👋 Eu sou o QuotLyBot</b>
+
+  Transformo mensagens de chat comuns em incríveis figurinhas de citações. Simples, criativo e divertido de usar!
+
+  <b>Pronto para criar sua primeira citação?</b>
+  1️⃣ No privado: Encaminhe qualquer mensagem para mim (você pode selecionar várias!)
+  2️⃣ Em grupos: Adicione-me ao seu grupo e responda com <code>/q</code> a qualquer mensagem
+
+  Digite /help quando estiver pronto para descobrir todas as possibilidades criativas! 🎨
+help: |
+  <b>✨ Guia Rápido do QuotLyBot</b>
+
+  <b>📱 Comandos Básicos</b>
+  • <code>/q</code> - Citar mensagem respondida
+  • <code>/q 3</code> - Citar várias mensagens
+  • Encaminhar mensagem - Citar diretamente
+
+  <b>🎨 Estilos</b>
+
+  Cores:
+  • Básico: <code>/q red</code>
+  • Personalizado: <code>/q #ff69b4</code>
+  • Degradê: <code>/q red//#blue</code>
+  • Aleatório: <code>/q random</code>
+
+  Mídia:
+  • Adicionar foto: <code>/q media</code>
+  • Recortar imagem: <code>/q crop</code>
+  • Manter thread: <code>/q reply</code>
+  • Prévia de voz: Automático
+
+  Formato:
+  • Sticker: <code>/q</code>
+  • Imagem: <code>/q img</code>
+  • HD: <code>/q png</code>
+  • História: <code>/q stories</code>
+
+  Qualidade:
+  • Normal: <code>/q</code>
+  • 2x: <code>/q s2</code>
+  • 3x: <code>/q s3</code>
+
+  <b>💫 Combinações Populares</b>
+  • <code>/q red media</code> - Citação vermelha com foto
+  • <code>/q 3 reply</code> - Citação com contexto
+  • <code>/q img s2</code> - Imagem de alta qualidade
+  • <code>/q stories media</code> - História com foto
+
+  <b>⚙️ Recursos Extras</b>
+  • Avaliação: <code>/q rate</code>
+  • Citações Aleatórias: <code>/qrand</code>
+  • Melhores citações: <code>/qtop</code>
+  • Idioma: <code>/lang</code>
+
+  <b>🎯 Configurações do Grupo</b>
+  • Cor padrão: <code>/qcolor</code>
+  • Ativar avaliação: <code>/qrate</code>
+  • Salvar no pacote: <code>/qs</code>
+
+  <b>🌈 Estilos de Emoji</b>
+  Clássico: <code>/qb apple</code>, <code>/qb google</code>
+  Alternativo: <code>/qb twitter</code>, <code>/qb joypixels</code>
+  Retrô: <code>/qb blob</code>
+
+  <b>📱 Precisa de Ajuda?</b>
+  • Blog: @LyBlog
+  • GitHub: github.com/LyoSU/quote-bot
+  • Suporte: <code>/donate</code>
+help_group: |
+  <b>Olá! 👋</b>
+  Vou criar belas citações neste grupo - basta usar <code>/q</code> em resposta a qualquer mensagem!
+
+  Descubra todos os meus recursos em particular: <a href="t.me/${username}?start=help">Obter Ajuda</a> ✨
+btn:
+  add_group: Adicionar ao grupo
+  help: Referencia
+quote:
+  unsupported_message: |
+    Desculpe, ainda não suporto este tipo de mensagem 😅
+
+    Tente texto, fotos, adesivos ou mensagens de voz!
+  api_error: |
+    <b>Ops! Algo deu errado 😅</b>
+    <pre>${error}</pre>
+    Tente novamente em um momento!
+  empty_forward: |
+    Responda ou encaminhe a mensagem que você gostaria de citar ✨
+  set_background_color: |
+    <b>Perfeito!</b> Cor de fundo da citação mudada para: <code>${backgroundColor}</code> 🎨
+  set_emoji_brand: |
+    <b>Pronto!</b> Estilo de emoji alterado para: <code>${emojiBrand}</code> ✨
+  errors:
+    api_down: |
+      😕 Nosso serviço de citações está temporariamente indisponível. Por favor, tente novamente em alguns minutos.
+
+      Se o problema persistir, verifique @LyBlog para atualizações.
+    rate_limit: |
+      ⏳ Muitas solicitações! Por favor, aguarde ${seconds} segundos antes de criar outra citação.
+    file_too_large: |
+      📸 O arquivo de mídia é muito grande (máximo de 5MB). Tente usar uma imagem ou vídeo menor.
+    invalid_format: |
+      ❌ Formato de arquivo não suportado. Eu suporto:
+      • Imagens (JPG, PNG, WEBP)
+      • Vídeos (MP4)
+      • Figurinhas
+      • Mensagens de texto
+    telegram_error: |
+      ⚠️ Erro do Telegram: ${error}
+
+      Isso geralmente acontece quando:
+      • O arquivo é muito grande
+      • O pacote de figurinhas está cheio
+      • O bot não tem permissões
+    generic_error: |
+      😅 Opa! Algo deu errado:
+      <code>${error}</code>
+
+      Por favor, tente novamente ou reporte isso para @Ly_oBot se persistir.
+sticker:
+  save:
+    suc: Adicionado com sucesso ao seu <a href="${link}">pacote de adesivos do grupo</a> ✨
+    error:
+      animated: Desculpe, ainda não posso salvar adesivos animados 😅
+      need_creator: <b>Quase lá!</b> ${creator} precisa me enviar uma mensagem primeiro para salvar adesivos
+      telegram: <b>Ops!</b> Algo deu errado:\n<pre>${error}</pre>
+  delete:
+    suc: Removido do seu <a href="${link}">pacote de adesivos do grupo</a> 🗑
+    error:
+      telegram: |
+        <b>Ops!</b> Não foi possível remover o adesivo:\n<pre>${error}</pre>
+      not_found: A figurinha não existe mais no pacote 🤔
+      rights: Não tenho permissão para deletar esta figurinha 🔒
+      generic: |
+        Algo deu errado. Por favor, tente novamente mais tarde ⚠️
+
+        <code>${error}</code>
+  delete_random:
+    suc: Removido da coleção aleatória 🗑
+    error: |
+      <b>Ops!</b> Não foi possível remover o adesivo:\n<pre>${error}</pre>
+    not_found: Esta citação não está no banco de dados 🤔
+  empty_forward: |
+    Por favor, responda a um adesivo, foto ou imagem que você gostaria de salvar ✨
+  fstik: |
+    Para salvar isso no seu pacote pessoal de adesivos, encaminhe para @fStikBot 🎨
+rate:
+  vote:
+    rated: |
+      Você ${rateName} esta citação! Obrigado por avaliar ⭐
+    back: |
+      Seu voto foi removido 🔄
+  settings:
+    enable: |
+      A avaliação de citações agora está ativada! Avalie com ⭐
+    disable: |
+      A avaliação de citações foi desativada 🔄
+random:
+  empty: |
+    Ainda não há citações altamente avaliadas neste grupo! Comece a avaliar algumas mensagens ⭐
+  gab: |
+    Frequência de citação aleatória definida para ${gab} ✨
+hidden:
+  settings:
+    enable: |
+      Pesquisa de remetente ativada 🔍
+    disable: |
+      Pesquisa de remetente desativada 🔄
+privacy:
+  settings:
+    enable: |
+      Modo de privacidade ativado 🔒 Suas informações ficarão ocultas nas citações
+    disable: |
+      Modo de privacidade desativado 🔓
+top:
+  info: |
+    <b>✨ Mensagens Mais Citadas</b>
+  open: Ver Citações Principais
+donate:
+  info: |
+    <b>Suporte ao Desenvolvimento do QuotLyBot! ☕</b>
+
+    Seu suporte nos ajuda a:
+    • Manter os servidores funcionando 24/7
+    • Adicionar novos recursos e estilos
+    • Melhorar a qualidade das citações
+    • Tornar o bot mais rápido
+
+    <b>💳 Opções de Pagamento Fáceis</b>
+    • <a href="https://send.monobank.ua/jar/2fpLioJzU8">Pagamento com Cartão</a> (Visa/Mastercard)
+    • Apple Pay / Google Pay
+
+    <b>🔒 Criptomoedas (para usuários avançados)</b>
+    • BTC: <code>17QaN4wPZFaH4qtsgDdTaYwiW9s9PUcHj7</code>
+    • ETH/BUSD: <code>0x34007b75775F8DAe005A407141617aA2fBa2740c</code>
+
+    Toda contribuição ajuda a tornar o QuotLyBot melhor para todos! 💜
+  title: Suporte ${botUsername}
+  description: Ajude a manter a magia acontecendo ✨
+  successful: |
+    <b>Obrigado pelo seu apoio! 💜</b>
+    Você está ajudando a tornar o QuotLyBot ainda melhor!
+  pay: '💜 Telegram de pagamento'
+  liqpay: 'Pagar com Cartão 💳'
+  other: 'Outros Métodos'
+emoji:
+  info: |
+    <b>Escolha Seu Emoji de Citação!</b>
+
+    • Definir emoji personalizado: <code>/qemoji</code>💜
+    • Usar emoji aleatório: <code>/qemoji random</code>
+    • Limpar emoji: <code>/qemoji clear</code>
+
+    Seu emoji será adicionado a todas as novas citações ✨
+  done: Estilo de emoji atualizado! ✨
+only_admin: |
+  <b>⚠️ Acesso de Administrador Necessário</b>
+  Este comando só pode ser usado por administradores do grupo.
+only_group: |
+  <b>⚠️ Comando de Grupo</b>
+  Este recurso funciona apenas em chats de grupo.
+rate_limit: |
+  <i>Fazendo uma pausa rápida...</i> Você pode usar este comando novamente em ${seconds} segundos ⏳
+
+  <i>Dica de profissional: Enquanto espera, tente personalizar sua última citação com </i><code>/q color</code> <i>ou</i> <code>/q media</code>

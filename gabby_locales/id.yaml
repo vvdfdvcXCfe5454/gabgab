@@ -1,0 +1,237 @@
+---
+language_name: '🇮🇩 Indonesia'
+description:
+  short: |
+    Ubah pesan apapun menjadi stiker kutipan indah! ✨
+    Balas dengan /q atau teruskan pesan ke saya
+  long: |
+    Buat stiker kutipan memukau dan simpan momen obrolan favoritmu! ✨
+
+    Cukup balas /q ke pesan apapun atau teruskan ke saya. Sempurna untuk menyimpan:
+    🌟 Sorotan dan kenangan obrolan terbaik
+    💭 Pemikiran dan percakapan yang menginspirasi
+    🎨 Pesan kreatif dengan gaya kustom
+    ✍️ Catatan penting dalam format indah
+
+    Mulai sekarang - cukup teruskan pesan atau gunakan /q!
+start: |
+  <b>Hai! 👋 Saya QuotLyBot</b>
+
+  Saya mengubah pesan obrolan biasa menjadi stiker kutipan yang menakjubkan. Sederhana, kreatif, dan menyenangkan untuk digunakan!
+
+  ✨ <b>Siap untuk membuat kutipan pertama Anda?</b>
+  <b>Di obrolan pribadi:</b> Teruskan pesan apa pun kepada saya (Anda bahkan dapat memilih beberapa sekaligus!)
+  <b>Di grup:</b> Tambahkan saya ke grup Anda dan balas dengan <code>/q</code> ke pesan apa pun
+
+  Ingin mengubah warna, gaya, dan lainnya? Ketik /help saat Anda siap untuk menemukan semua kemungkinan kreatif! 🎨
+help: |
+  <b>✨ QuotLyBot: Kutipan Cepat & Mudah! ✨</b>
+
+  Ubah pesan menjadi kutipan bergaya di Telegram. Begini caranya:
+
+  📱 <b>Dasar Kutipan</b>
+
+  • Balas & Kutip: Balas pesan dan ketik <code>/q</code> untuk mengutipnya.
+  • Kutip Beberapa: Balas pesan pertama dari beberapa pesan, ketik <code>/q [nomor]</code> (misalnya, <code>/q 3</code>) untuk mengutip beberapa pesan.
+  • Teruskan & Kutip: Teruskan pesan ke bot untuk mengutipnya langsung.
+
+  🎨 <b>Kustomisasi Kutipan Anda</b>
+
+  • Warna:
+      • Dasar: <code>/q merah</code> (atau biru, hijau, dll.)
+      • Kustom: <code>/q #[kode warna hex]</code> (misalnya, <code>/q #cbafff</code>)
+      • Acak: <code>/q acak</code>
+  • Media: Sertakan gambar/video dari pesan yang dikutip dengan <code>/q m</code> atau <code>/q media</code>
+      • Potong Media: Gunakan <code>/q c</code> atau <code>/q potong</code> untuk memotong media.
+  • Pertahankan Balasan: Tampilkan pesan yang dibalas dengan <code>/q r</code> atau <code>/q balas</code>
+  • Format Gambar: Gunakan <code>/q i</code> atau <code>/q img</code> atau <code>/q p</code> atau <code>/q png</code> untuk kutipan gambar (alih-alih stiker).
+
+  💡 <b>Kombinasi Keren</b>
+
+  • Kutipan putih dengan balasan: <code>/q 3 putih rp</code>
+  • Gambar merah berkualitas tinggi: <code>/q i merah s3.2</code>
+  • Kutipan dengan media & balasan: <code>/q r 2 #cbafff m</code>
+
+  ⚙️ <b>Opsi Lainnya</b>
+
+  • Nilai Kutipan: <code>/q nilai</code> (jika diaktifkan dalam grup)
+  • Kutipan Acak: <code>/qrand</code> (jika diaktifkan dalam grup)
+  • Kutipan Teratas: <code>/qtop</code> (jika diaktifkan dalam grup)
+  • Ubah Bahasa: <code>/lang</code>
+
+  🎯 <b>Pengaturan Admin Grup</b> (hanya untuk admin grup)
+
+  • Warna Default: <code>/qwarna [warna]</code>
+  • Aktifkan Penilaian: <code>/qrate</code>
+  • Simpan ke Paket Stiker: <code>/qs [emoji]</code>
+  • Hapus Stiker: <code>/qd</code> (balas ke stiker)
+  • Frekuensi Kutipan Acak: <code>/qgab [nomor]</code>
+  • Ubah Akhiran Emoji: <code>/qemoji</code> (ubah akhiran emoji stiker)
+  • Gaya Emoji:
+      • Klasik: <code>/qb apple</code>, <code>/qb google</code>
+      • Alt: <code>/qb twitter</code>, <code>/qb joypixels</code>
+      • Retro: <code>/qb blob</code>
+
+  📱 <b>Perlu Bantuan?</b>
+
+  • Blog: <a href="https://t.me/LyBlog">@LyBlog</a>
+  • GitHub: <a href="https://github.com/LyoSU/quote-bot">github.com/LyoSU/quote-bot</a>
+  • Dukungan: <code>/donate</code>
+help_group: |
+  <b>Halo! 👋</b>
+  Saya akan membuat kutipan indah di grup ini - cukup gunakan <code>/q</code> untuk membalas pesan apapun!
+
+  Pelajari semua fitur saya secara pribadi: <a href="t.me/${username}?start=help">Dapatkan Bantuan</a> ✨
+btn:
+  add_group: Tambahkan ke Grup
+  help: Bantuan
+quote:
+  unsupported_message: |
+    Maaf, saya belum mendukung jenis pesan ini 😅
+
+    Cobalah teks, foto, stiker, atau pesan suara!
+  api_error: |
+    <b>Ups! Ada yang salah 😅</b>
+    <pre>${error}</pre>
+    Silakan coba lagi sebentar lagi!
+  empty_forward: |
+    Silakan balas atau teruskan pesan yang ingin Anda kutip ✨
+  set_background_color: |
+    <b>Sempurna!</b> Latar belakang kutipan diubah menjadi: <code>${backgroundColor}</code> 🎨
+  set_emoji_brand: |
+    <b>Selesai!</b> Gaya emoji diubah menjadi: <code>${emojiBrand}</code> ✨
+  errors:
+    api_down: |
+      😕 Layanan kutipan kami sedang tidak tersedia. Silakan coba lagi dalam beberapa menit.
+
+      Jika masalah terus berlanjut, periksa @LyBlog untuk pembaruan.
+    rate_limit: |
+      ⏳ Terlalu banyak permintaan! Harap tunggu ${seconds} detik sebelum membuat kutipan lain.
+    file_too_large: |
+      📸 File media terlalu besar (maks 5MB). Coba gunakan gambar atau video yang lebih kecil.
+    invalid_format: |
+      ❌ Format file tidak didukung. Saya mendukung:
+      • Gambar (JPG, PNG, WEBP)
+      • Video (MP4)
+      • Stiker
+      • Pesan teks
+    telegram_error: |
+      ⚠️ Kesalahan Telegram: ${error}
+
+      Ini biasanya terjadi ketika:
+      • File terlalu besar
+      • Paket stiker penuh
+      • Bot tidak memiliki izin
+    generic_error: |
+      😅 Ups! Terjadi kesalahan:
+      <code>${error}</code>
+
+      Silakan coba lagi atau laporkan ke @Ly_oBot jika masalah berlanjut.
+sticker:
+  save:
+    suc: Stiker telah berhasil ditambahkan ke <a href="${link}">paket stiker grup</a> ✨
+    error:
+      animated: Maaf, saya belum bisa menyimpan stiker animasi 😅
+      need_creator: <b>Hampir selesai!</b> ${creator} harus mengirimkan pesan kepada saya terlebih dahulu untuk menyimpan stiker
+      telegram: <b>Ups!</b> Ada yang salah:\n<pre>${error}</pre>
+  delete:
+    suc: Dihapus dari <a href="${link}">paket stiker grup</a> Anda 🗑
+    error:
+      telegram: |
+        <b>Gagal menghapus stiker 😕</b>
+        ${reason}
+      not_found: Stiker tidak ada lagi di dalam paket 🤔
+      rights: Saya tidak memiliki izin untuk menghapus stiker ini 🔒
+      generic: |
+        Ada yang salah. Silakan coba lagi nanti ⚠️
+
+        <code>${error}</code>
+  delete_random:
+    suc: Dihapus dari koleksi acak 🗑
+    error: |
+      <b>Gagal menghapus kutipan 😕</b>
+      ${error}
+    not_found: Kutipan ini tidak ada dalam database 🤔
+  empty_forward: |
+    Silakan balas pada stiker, foto, atau gambar yang ingin Anda simpan ✨
+  fstik: |
+    Untuk menyimpan di paket stiker pribadi Anda, teruskan ke @fStikBot 🎨
+rate:
+  vote:
+    rated: |
+      Anda ${rateName} kutipan ini! Terima kasih telah menilai ⭐
+    back: |
+      Suara Anda telah dihapus 🔄
+  settings:
+    enable: |
+      Penilaian kutipan sekarang diaktifkan! Nilai dengan ⭐
+    disable: |
+      Penilaian kutipan telah dinonaktifkan 🔄
+random:
+  empty: |
+    Belum ada kutipan berpenilaian tinggi di grup ini! Mulailah menilai beberapa pesan ⭐
+  gab: |
+    Frekuensi kutipan acak diatur ke ${gab} ✨
+hidden:
+  settings:
+    enable: |
+      Pencarian pengirim diaktifkan. 🔍
+    disable: |
+      Pencarian pengirim dinonaktifkan. 🔄
+privacy:
+  settings:
+    enable: |
+      Mode privasi diaktifkan 🔒 Info Anda akan disembunyikan dalam kutipan
+    disable: |
+      Mode privasi dinonaktifkan 🔓
+top:
+  info: |
+    <b>✨ Pesan Kutipan Teratas</b>
+  open: Lihat Kutipan Teratas
+donate:
+  info: |
+    <b>Dukung Pengembangan QuotLyBot! ☕</b>
+
+    Dukungan Anda membantu kami:
+    • Menjaga server berjalan 24/7
+    • Menambah fitur dan gaya baru
+    • Meningkatkan kualitas kutipan
+    • Membuat bot lebih cepat
+
+    <b>💳 Opsi Pembayaran Mudah</b>
+    • <a href="https://send.monobank.ua/jar/2fpLioJzU8">Pembayaran Kartu</a> (Visa/Mastercard)
+    • Apple Pay / Google Pay
+
+    <b>🔒 Cryptocurrency (untuk pengguna melek teknologi)</b>
+    • BTC: <code>17QaN4wPZFaH4qtsgDdTaYwiW9s9PUcHj7</code>
+    • ETH/BUSD: <code>0x34007b75775F8DAe005A407141617aA2fBa2740c</code>
+
+    Setiap kontribusi membantu membuat QuotLyBot lebih baik untuk semua! 💜
+  title: Dukungan ${botUsername}
+  description: Bantu agar keajaiban terus berlangsung ✨
+  successful: |
+    <b>Terima kasih atas dukungan Anda! 💜</b>
+    Anda telah membantu membuat QuotLyBot menjadi lebih baik!
+  pay: '💜 Bayar Telegram'
+  liqpay: 'Bayar dengan Kartu 💳'
+  other: 'Sebaliknya'
+emoji:
+  info: |
+    <b>Pilih Emoji Kutipan Anda!</b>
+
+    • Atur emoji kustom: <code>/qemoji</code>💜
+    • Gunakan emoji acak: <code>/qemoji random</code>
+    • Hapus emoji: <code>/qemoji clear</code>
+
+    Emoji Anda akan ditambahkan ke semua kutipan baru ✨
+  done: Gaya emoji diperbarui! ✨
+only_admin: |
+  <b>⚠️ Akses Admin Diperlukan</b>
+  Perintah ini hanya bisa digunakan oleh administrator grup.
+only_group: |
+  <b>⚠️ Perintah Grup</b>
+  Fitur ini hanya berfungsi di obrolan grup.
+rate_limit: |
+  <i>Istirahat sejenak...</i> Anda dapat menggunakan perintah ini lagi dalam ${seconds} detik ⏳
+
+  <i>Tip pro: Sambil menunggu, coba kustomisasi kutipan terakhir Anda dengan </i><code>/q color</code> <i>atau</i> <code>/q media</code>

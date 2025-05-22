@@ -1,0 +1,237 @@
+---
+language_name: '🇳🇱 Nederlands'
+description:
+  short: |
+    Maak van elk bericht een prachtige citaatsticker! ✨
+    Reageer met /q of stuur het bericht naar mij
+  long: |
+    Maak verbluffende citaatstickers en bewaar je favoriete chatmomenten! ✨
+
+    Reageer eenvoudig met /q op een bericht of stuur het naar mij door. Perfect om te bewaren:
+    🌟 Beste chat hoogtepunten en herinneringen
+    💭 Inspirerende gedachten en gesprekken
+    🎨 Creatieve berichten met aangepaste stijlen
+    ✍️ Belangrijke notities in een mooie vorm
+
+    Begin nu - stuur een bericht door of gebruik /q!
+start: |
+  <b>Hallo! 👋 Ik ben QuotLyBot</b>
+
+  Ik transformeer gewone chatberichten in verbluffende quote stickers. Eenvoudig, creatief en leuk in gebruik!
+
+  ✨ <b>Klaar om je eerste quote te maken?</b>
+  <b>In privéchats:</b> Stuur alle berichten door naar mij (je kunt er zelfs meerdere tegelijk kiezen!)
+  <b>In groepen:</b> Voeg mij toe aan je groep en antwoord met <code>/q</code> op elk bericht
+
+  Wil je kleuren, stijlen en meer veranderen? Typ /help wanneer je klaar bent om alle creatieve mogelijkheden te ontdekken! 🎨
+help: |
+  <b>✨ QuotLyBot: Snel & Gemakkelijk Citeren! ✨</b>
+
+  Zet berichten om in stijlvolle quotes in Telegram. Zo werkt het:
+
+  📱 <b>Basis Citeren</b>
+
+  • Antwoord & Citeren:  Antwoord op een bericht en typ <code>/q</code> om het te citeren.
+  • Meerdere Citeren: Reageer op het eerste van meerdere berichten, typ <code>/q [nummer]</code> (bijv. <code>/q 3</code>) om meerdere te citeren.
+  • Doorsturen & Citeren: Stuur een bericht door naar de bot om het direct te citeren.
+
+  🎨 <b>Je Citaat Aanpassen</b>
+
+  • Kleuren:
+      • Basis: <code>/q rood</code> (of blauw, groen, enz.)
+      • Aangepast: <code>/q #[hex kleurcode]</code> (bijv. <code>/q #cbafff</code>)
+      • Willekeurig: <code>/q random</code>
+  • Media: Voeg afbeeldingen/video's uit het geciteerde bericht toe met <code>/q m</code> of <code>/q media</code>
+      • Media Bijsnijden: Gebruik <code>/q c</code> of <code>/q crop</code> om de media bij te snijden.
+  • Antwoorden Behoud: Toon het bericht waarop gereageerd wordt met <code>/q r</code> of <code>/q reply</code>
+  • Beeldformaat: Gebruik <code>/q i</code> of <code>/q img</code> of <code>/q p</code> of <code>/q png</code> voor beeldquotes (in plaats van stickers).
+
+  💡 <b>Coole Combinaties</b>
+
+  • Witte quote met antwoorden: <code>/q 3 white rp</code>
+  • Hoogwaardige rode afbeelding: <code>/q i red s3.2</code>
+  • Quote met media & antwoorden: <code>/q r 2 #cbafff m</code>
+
+  ⚙️ <b>Meer Opties</b>
+
+  • Quotes Beoordelen: <code>/q rate</code> (indien ingeschakeld in groep)
+  • Willekeurige Quote: <code>/qrand</code> (indien ingeschakeld in groep)
+  • Top Quotes: <code>/qtop</code> (indien ingeschakeld in groep)
+  • Taal Wijzigen: <code>/lang</code>
+
+  🎯 <b>Groepsbeheer Instellingen</b> (alleen voor groepsbeheerders)
+
+  • Standaardkleur: <code>/qcolor [kleur]</code>
+  • Beoordeling Inschakelen: <code>/qrate</code>
+  • Opslaan in Sticker Pakket: <code>/qs [emoji]</code>
+  • Sticker Verwijderen: <code>/qd</code> (antwoord op sticker)
+  • Frequentie Willekeurige Quote: <code>/qgab [nummer]</code>
+  • Emoji Achtervoegsel Wijzigen: <code>/qemoji</code> (verander emoji achtervoegsel van sticker)
+  • Emoji Stijl:
+      • Klassiek: <code>/qb apple</code>, <code>/qb google</code>
+      • Alternatief: <code>/qb twitter</code>, <code>/qb joypixels</code>
+      • Retro: <code>/qb blob</code>
+
+  📱 <b>Hulp Nodig?</b>
+
+  • Blog: <a href="https://t.me/LyBlog">@LyBlog</a>
+  • GitHub: <a href="https://github.com/LyoSU/quote-bot">github.com/LyoSU/quote-bot</a>
+  • Ondersteuning: <code>/donate</code>
+help_group: |
+  <b>Hallo! 👋</b>
+  Ik maak prachtige citaten in deze groep - gebruik gewoon <code>/q</code> als antwoord op een bericht!
+
+  Leer al mijn functies in privé: <a href="t.me/${username}?start=help">Krijg Hulp</a> ✨
+btn:
+  add_group: Voeg toe aan groep
+  help: Hulp
+quote:
+  unsupported_message: |
+    Sorry, ik ondersteun dit berichttype nog niet 😅
+
+    Probeer tekst-, foto-, sticker- of spraakberichten!
+  api_error: |
+    <b>Oeps! Er ging iets mis 😅</b>
+    <pre>${error}</pre>
+    Probeer het over een moment opnieuw!
+  empty_forward: |
+    Reageer of stuur het bericht dat je wilt citeren ✨
+  set_background_color: |
+    <b>Perfect!</b> Citaat achtergrond veranderd naar: <code>${backgroundColor}</code> 🎨
+  set_emoji_brand: |
+    <b>Klaar!</b> Emoji stijl gewijzigd naar: <code>${emojiBrand}</code> ✨
+  errors:
+    api_down: |
+      😕 Onze offerteservice is tijdelijk niet beschikbaar. Probeer het over een paar minuten opnieuw.
+
+      Als het probleem aanhoudt, controleer @LyBlog voor updates.
+    rate_limit: |
+      ⏳ Te veel aanvragen! Wacht ${seconds} seconden voordat u een nieuwe offerte creëert.
+    file_too_large: |
+      📸 Het mediabestand is te groot (maximaal 5MB). Probeer een kleinere afbeelding of video te gebruiken.
+    invalid_format: |
+      ❌ Niet-ondersteund bestandsformaat. Ik ondersteun:
+      • Afbeeldingen (JPG, PNG, WEBP)
+      • Video's (MP4)
+      • Stickers
+      • Tekstberichten
+    telegram_error: |
+      ⚠️ Telegramfout: ${error}
+
+      Dit gebeurt meestal wanneer:
+      • Het bestand te groot is
+      • Het stickerpakket vol is
+      • De bot geen toestemmingen heeft
+    generic_error: |
+      😅 Oeps! Er is iets misgegaan:
+      <code>${error}</code>
+
+      Probeer het opnieuw of meld dit bij @Ly_oBot als het probleem aanhoudt.
+sticker:
+  save:
+    suc: Succesvol toegevoegd aan je <a href="${link}">groepssticker pakket</a> ✨
+    error:
+      animated: Sorry, ik kan nog geen geanimeerde stickers opslaan 😅
+      need_creator: <b>Bijna daar!</b> ${creator} moet mij eerst een bericht sturen om stickers op te slaan
+      telegram: <b>Oeps!</b> Er ging iets mis:\n<pre>${error}</pre>
+  delete:
+    suc: Verwijderd uit je <a href="${link}">groepssticker pakket</a> 🗑
+    error:
+      telegram: |
+        <b>Oeps!</b> Sticker kon niet worden verwijderd:
+        ${reason}
+      not_found: De sticker bestaat niet meer in het pakket 🤔
+      rights: Ik heb geen toestemming om deze sticker te verwijderen 🔒
+      generic: |
+        Er is iets misgegaan. Probeer het later opnieuw ⚠️
+
+        <code>${error}</code>
+  delete_random:
+    suc: Verwijderd uit willekeurige verzameling 🗑
+    error: |
+      <b>Kon de offerte niet verwijderen 😕</b>
+      ${error}
+    not_found: Deze offerte staat niet in de database 🤔
+  empty_forward: |
+    Reageer op een sticker, foto of afbeelding die je wilt opslaan ✨
+  fstik: |
+    Om dit op te slaan naar je persoonlijke stickerpakket, stuur door naar @fStikBot 🎨
+rate:
+  vote:
+    rated: |
+      Je ${rateName} deze citaat! Bedankt voor het beoordelen ⭐
+    back: |
+      Je stem is verwijderd 🔄
+  settings:
+    enable: |
+      Citaat beoordeling is nu ingeschakeld! Beoordeel met ⭐
+    disable: |
+      Citaat beoordeling is uitgeschakeld 🔄
+random:
+  empty: |
+    Nog geen hoog gewaardeerde citaten in deze groep! Begin enkele berichten te beoordelen ⭐
+  gab: |
+    Frequentie voor willekeurige citaat ingesteld op ${gab} ✨
+hidden:
+  settings:
+    enable: |
+      Zoeken door afzender is ingeschakeld 🔍
+    disable: |
+      Zoekopdracht afzender is uitgeschakeld 🔄
+privacy:
+  settings:
+    enable: |
+      Privacy modus geactiveerd 🔒 Uw informatie wordt verborgen in citaten
+    disable: |
+      Privacy modus is uitgeschakeld 🔓
+top:
+  info: |
+    <b>✨ Top Geciteerde Berichten</b>
+  open: Bekijk Top Citaten
+donate:
+  info: |
+    <b>Steun de Ontwikkeling van QuotLyBot! ☕</b>
+
+    Je steun helpt ons:
+    • De servers 24/7 draaiende houden
+    • Nieuwe functies en stijlen toevoegen
+    • De kwaliteit van citaten verbeteren
+    • De bot sneller maken
+
+    <b>💳 Eenvoudige Betaalmethoden</b>
+    • <a href="https://send.monobank.ua/jar/2fpLioJzU8">Betaal met Kaart</a> (Visa/Mastercard)
+    • Apple Pay / Google Pay
+
+    <b>🔒 Cryptocurrency (voor de technische gebruikers)</b>
+    • BTC: <code>17QaN4wPZFaH4qtsgDdTaYwiW9s9PUcHj7</code>
+    • ETH/BUSD: <code>0x34007b75775F8DAe005A407141617aA2fBa2740c</code>
+
+    Elke bijdrage helpt om QuotLyBot beter te maken voor iedereen! 💜
+  title: Steun ${botUsername}
+  description: Help de magie voort te zetten ✨
+  successful: |
+    <b>Bedankt voor uw steun! 💜</b>
+    Je helpt QuotLyBot nog beter te maken!
+  pay: '💜 Betaal via Telegram'
+  liqpay: 'Betaal met Kaart 💳'
+  other: 'Andere opties'
+emoji:
+  info: |
+    <b>Kies je Citaat Emoji!</b>
+
+    • Stel aangepaste emoji in: <code>/qemoji</code>💜
+    • Gebruik willekeurige emoji: <code>/qemoji random</code>
+    • Emoji wissen: <code>/qemoji clear</code>
+
+    Je emoji wordt toegevoegd aan alle nieuwe citaten ✨
+  done: Emoji stijl bijgewerkt! ✨
+only_admin: |
+  <b>⚠️ Admin Toegang Nodig</b>
+  Dit commando kan alleen worden gebruikt door groepsbeheerders.
+only_group: |
+  <b>⚠️ Groepscommando</b>
+  Deze functie werkt alleen in groepschats.
+rate_limit: |
+  <i>Nemen een korte pauze...</i> Je kunt dit commando weer gebruiken in ${seconds} seconden ⏳
+
+  <i>Tip: Terwijl je wacht, probeer je laatste citaat aan te passen met </i><code>/q kleur</code> <i>of</i> <code>/q media</code>
