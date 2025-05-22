@@ -1,0 +1,3 @@
+python-telegram-bot
+python-dotenv
+# Add any other dependencies your modules need below
