@@ -1,3 +1,14 @@
 python-telegram-bot
 python-dotenv
-# Add any other dependencies your modules need below
+telethon
+psutil
+requests
+wikipedia
+pyrogram
+pillow
+spamwatch
+telegraph
+pymongo
+redis
+Flask
+# Add any other dependencies your module1 need below

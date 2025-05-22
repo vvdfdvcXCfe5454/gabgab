@@ -6,35 +6,40 @@ from os import path
 import os
 import importlib
 from gabby_config import Config
+
+ASSISTANT_TOKEN = Config.ASSISTANT_TOKEN  
+
+from modules.userinfo import get_readable_time
+from modules.misc import *  # For future helpers
+import subprocess
+
 TOKEN = Config.TOKEN
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
+OWNER_ID = Config.OWNER_ID
+from telegram.constants import ParseMode
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.error import (
     BadRequest,
     ChatMigrated,
     NetworkError,
     TelegramError,
     TimedOut,
-    Unauthorized,
+    Forbidden,  #
 )
-from telegram.ext import CallbackContext, Filters
-from telegram.utils.helpers import escape_markdown
+from telegram.ext import CallbackContext, filters
+from telegram.helpers import escape_markdown
 from typing import Optional
 from telegram import Chat, User, Message
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, MessageHandler
 
-from Gabby.gabby_modules import ALL_MODULES
-
 import logging
-LOGGER = logging.getLogger("Gabby")
 import traceback
-import json
 import html
+import json
 import asyncio
-from Gabby.gabby_modules.userinfo import get_readable_time
-from Gabby.gabby_modules import admin  # Example: for is_user_admin, etc.
-from Gabby.gabby_modules.misc import *  # For future helpers
 
-# === GABBY BOT STARTUP AND ASSISTANT INTEGRATION ===
+logging.basicConfig(level=logging.INFO)
+LOGGER = logging.getLogger("Gabby")
+
 
 PM_START_TEX = """
 Hey there, `{}` 😘\nGabby is getting all dolled up for you... just a sec! 💋
@@ -67,7 +72,7 @@ So happy you wanna support me! 💋
 You can slide into my developer's DMs to donate, or visit my support chat and ask about donations there. Every little bit helps keep me sexy and online for you! 😘
 """
 
-MODULES_DIR = os.path.join(os.path.dirname(__file__), "modules")
+MODULES_DIR = os.path.join(os.path.dirname(__file__), "gabby_modules")
 ALL_MODULES = [
     f[:-3] for f in os.listdir(MODULES_DIR)
     if f.endswith(".py") and not f.startswith("__")
@@ -75,7 +80,7 @@ ALL_MODULES = [
 
 IMPORTED = {}
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module(f"Gabbybot.modules.{module_name}")
+    imported_module = importlib.import_module(f"gabby_modules.{module_name}")
     IMPORTED[module_name] = imported_module
 
 HELPABLE = {}
@@ -83,18 +88,18 @@ START_IMG = "https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4"
 BOT_NAME = "Gabby"
 SUPPORT_CHAT = "GabbySupport"
 StartTime = time.time()
-def paginate_modules(page, modules, prefix, chat=None):
+def paginate_modules(page, module1, prefix, chat=None):
     return [[InlineKeyboardButton("Module", callback_data=f"{prefix}_module")] for _ in range(3)]
 
 # Load Gabby assistant
-# from Gabbybot.modules import assistant
+# from Gabbybot.module1 import assistant
 # assistant.setup(dispatcher)
 
 # do not async
 def send_help(chat_id, text, keyboard=None):
     if not keyboard:
         keyboard = InlineKeyboardMarkup(paginate_modules(0, HELPABLE, "help"))
-    dispatcher.bot.send_photo(
+    updater.bot.send_photo(
         chat_id=chat_id,
         photo=START_IMG,
         caption=text,
@@ -189,8 +194,8 @@ def error_callback(update: Update, context: CallbackContext):
     error = context.error
     try:
         raise error
-    except Unauthorized:
-        print("Unauthorized error")
+    except Forbidden:
+        print("Forbidden error (was Unauthorized)")
     except BadRequest:
         print("BadRequest caught")
     except TimedOut:
@@ -262,7 +267,7 @@ def Babe_about_callback(update: Update, context: CallbackContext):
     if query.data == "babe_":
         uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_caption(
-            f"*Hey hot stuff!* 😘\n  *This is {dispatcher.bot.first_name}*"
+            f"*Hey hot stuff!* 😘\n  *This is {updater.bot.first_name}*"
             "\n*Your sexy group and music management bot, built to make your chats sizzle and keep the creeps away!*"
             "\n*Written in Python with SQLAlchemy and MongoDB as my secret sauce.*"
             "\n\n────────────────────"
@@ -275,7 +280,7 @@ def Babe_about_callback(update: Update, context: CallbackContext):
             "\n➲  Custom welcomes and group rules, just how you like it."
             "\n➲  Warn, ban, mute, kick, all the spicy admin tools."
             "\n➲  Notes, blacklists, and hot keyword replies."
-            f"\n\n➻ Tap the buttons below for more info about {dispatcher.bot.first_name}, babe.",
+            f"\n\n➻ Tap the buttons below for more info about {updater.bot.first_name}, babe.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -301,7 +306,7 @@ def Babe_about_callback(update: Update, context: CallbackContext):
         )
     elif query.data == "babe_support":
         query.message.edit_caption(
-            f"**Need a little help, baby?**\n\nIf you found a bug in {dispatcher.bot.first_name} or want to give some feedback, come to my support chat and let's talk! 💋",
+            f"**Need a little help, baby?**\n\nIf you found a bug in {updater.bot.first_name} or want to give some feedback, come to my support chat and let's talk! 💋",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -405,8 +410,22 @@ def is_user_admin(chat, user_id):
 
 # Moved Updater definition here
 updater = Updater(token=TOKEN, use_context=True)
+dispatcher = updater.dispatcher
+
+def get_help(update: Update, context: CallbackContext):
+    update.effective_message.reply_text(HELP_STRINGS, parse_mode=ParseMode.MARKDOWN)
+
+def run_js_bot():
+    js_path = os.path.join(os.path.dirname(__file__), 'index.js')
+    try:
+        # Use sys.executable to ensure correct environment, but call node
+        subprocess.Popen(['node', js_path])
+        print('Started JS bot (index.js) in background.')
+    except Exception as e:
+        print(f'Failed to start JS bot: {e}')
 
 def main():
+    run_js_bot()
     # Handler registration
     start_handler = CommandHandler("start", start, run_async=True)
     help_handler = CommandHandler("help", get_help, run_async=True)
@@ -417,7 +436,7 @@ def main():
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_", run_async=True)
     music_callback_handler = CallbackQueryHandler(Music_about_callback, pattern=r"Music_", run_async=True)
     main_menu_handler = CallbackQueryHandler(MukeshRobot_Main_Callback, pattern=r".*_help", run_async=True)
-    migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
+    migrate_handler = MessageHandler(filters.StatusUpdate.MIGRATE, migrate_chats)
     donate_handler = CommandHandler("donate", donate)
 
     dispatcher.add_handler(start_handler)
@@ -441,5 +460,5 @@ def main():
     updater.idle()
 
 if __name__ == "__main__":
-    LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
+    LOGGER.info("Successfully loaded module1: " + str(ALL_MODULES))
     main()
